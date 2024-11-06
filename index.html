@@ -3,13 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Borelli Weather App</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Weather App</title>
   </head>
-  <body></body>
+  <body>
+    <div class="weather-app">
+      <header>
+        <div class="search-container">
+          <form class="search-form" id="search-form">
+            <input
+              type="search"
+              placeholder="Enter city name..."
+              required
+              id="search-form-input"
+              class="search-form-input"
+            />
+            <input type="submit" value="Search" class="search-form-button" />
+          </form>
+        </div>
+      </header>
+      <main>
+        <div class="weather-app-data">
+          <div class="weather-app-header">
+            <p id="time" class="weather-app-time"></p>
+            <h1 class="weather-app-city" id="city"></h1>
+            <span id="description" class="weather-app-description"></span>
+          </div>
+          <div class="weather-app-temperature-container">
+            <img
+              src="src/icons/cloudy.png"
+              alt="Weather Icon"
+              class="animated-weather-icon"
+              id="weather-icon"
+            />
+            <div class="weather-app-temperature" id="temperature"></div>
+          </div>
+          <div class="weather-app-humidity-wind">
+            <span>Humidity: <strong id="humidity"></strong>%,</span>
+            <span>Wind: <strong id="wind-speed"></strong> km/h</span>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
 </html>
