@@ -1,5 +1,4 @@
 body {
-  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/149/534/original/sunclouds-origin.png?1730820039");
   background-size: contain;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -12,6 +11,30 @@ body {
   align-items: center;
   justify-content: center;
   transition: background 0.5s ease-in-out;
+}
+
+body.clear-sky {
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/149/554/original/sunny.png?1730834177");
+}
+
+body.few-clouds {
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/149/534/original/sunclouds-origin.png?1730820039");
+}
+
+body.broken-clouds {
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/149/552/original/cloudy.png?1730834122");
+}
+
+body.rainy {
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/149/551/original/rainy.png?1730834096");
+}
+
+body.snowy {
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/149/553/original/snowy.png?1730834152");
+}
+
+body.windy {
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/149/534/original/sunclouds-origin.png?1730820039");
 }
 
 .weather-app {

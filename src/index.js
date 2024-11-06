@@ -46,8 +46,14 @@ function refreshWeather(response) {
 
   const condition = response.data.condition.description.toLowerCase();
   const className = conditionsMap[condition] || "";
+
   weatherApp.setAttribute("data-condition", className);
   iconElement.src = iconMap[className] || "";
+
+  document.body.className = "";
+  if (className) {
+    document.body.classList.add(className);
+  }
 
   temperatureElement.innerHTML = `${Math.round(
     response.data.temperature.current
