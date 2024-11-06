@@ -1,11 +1,16 @@
 body {
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/149/534/original/sunclouds-origin.png?1730820039");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-color: #000;
   font-family: "Roboto", sans-serif;
   color: #ffffff;
-  background-color: #000;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   transition: background 0.5s ease-in-out;
 }
 
@@ -19,6 +24,20 @@ body {
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  gap: 2px;
+  transition: background 1s ease-in-out;
+}
+
+.weather-app-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding: 10px 0;
+  gap: 2px;
+  margin-top: 10px;
+  margin-bottom: 0;
 }
 
 .search-container {
@@ -35,13 +54,158 @@ body {
 
 .search-form-input,
 .search-form-button {
-  background-color: #333;
+  background-color: #333333;
   border: none;
   border-radius: 6px;
-  color: #fff;
+  font-size: 14px;
+  color: #ffffff;
   padding: 8px 10px;
 }
 
 .search-form-input {
   width: 180px;
+}
+
+.search-form-button {
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.animated-weather-icon {
+  width: 150px;
+  height: 150px;
+}
+
+.weather-app-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.weather-app-city {
+  font-size: 38px;
+  margin: 0;
+  text-align: center;
+}
+
+.weather-app-time {
+  font-size: 16px;
+  font-weight: lighter;
+  margin: 0;
+  color: #cccccc;
+  text-align: center;
+}
+
+.weather-app-temperature-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather-app-temperature {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.small-degree {
+  font-size: 0.5em;
+  vertical-align: super;
+}
+
+.weather-app-description,
+.weather-app-humidity-wind {
+  font-size: 16px;
+  font-weight: lighter;
+  color: #cccccc;
+}
+
+.weather-app-description {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.weather-app-humidity-wind {
+  display: inline;
+  text-align: center;
+  width: 100%;
+  gap: 5px;
+}
+
+.weather-app[data-condition="clear-sky"],
+.weather-app[data-condition="few-clouds"],
+.weather-app[data-condition="scattered-clouds"],
+.weather-app[data-condition="broken-clouds"],
+.weather-app[data-condition="shower-rain"],
+.weather-app[data-condition="rain"],
+.weather-app[data-condition="thunderstorm"],
+.weather-app[data-condition="snow"],
+.weather-app[data-condition="mist"] {
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  .weather-app-header,
+  .weather-app-data {
+    gap: 15px;
+  }
+
+  .weather-app {
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  .weather-app-temperature {
+    font-size: 48px;
+  }
+
+  .weather-app-city {
+    font-size: 32px;
+  }
+
+  #weather-icon {
+    width: 80px;
+    height: auto;
+  }
+
+  .search-form-button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .weather-app-header,
+  .weather-app-data {
+    gap: 10px;
+  }
+
+  .weather-app {
+    padding: 15px;
+    background-size: cover;
+  }
+
+  .weather-app-city {
+    font-size: 28px;
+  }
+
+  .weather-app-temperature {
+    font-size: 36px;
+  }
+
+  #weather-icon {
+    width: 60px;
+    height: auto;
+  }
+
+  .weather-app-description,
+  .weather-app-humidity-wind {
+    font-size: 14px;
+  }
 }
