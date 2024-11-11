@@ -156,6 +156,42 @@ body.windy {
   gap: 5px;
 }
 
+.weather-forecast {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  color: #cccccc;
+  font-size: 16px;
+  font-weight: lighter;
+  text-align: center;
+  width: 100%;
+}
+
+.weather-forecast-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  min-width: 80px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  margin-top: 30px;
+}
+
+.weather-forecast-date {
+  font-size: 16px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.weather-forecast-temperature {
+  font-size: 14px;
+  color: #cccccc;
+}
+
 .weather-app[data-condition="clear-sky"],
 .weather-app[data-condition="few-clouds"],
 .weather-app[data-condition="scattered-clouds"],

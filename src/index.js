@@ -107,9 +107,50 @@ function handleSearchSubmit(event) {
   event.preventDefault();
   const searchInput = document.querySelector("#search-form-input");
   if (searchInput.value) searchCity(searchInput.value);
+  getForecast(searchInput.value);
+}
+
+function formatDay(timestamp) {
+  const date = new Date(timestamp * 1000);
+  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[date.getDay()];
+}
+
+function getForecast(city) {
+  let apiKey = "4fbe9b2c44d0f8a0833d1te403cbb78o";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  let forecastHtml = "";
+
+  response.data.daily.forEach(function (day, index) {
+    if (index < 3) {
+      forecastHtml =
+        forecastHtml +
+        `
+  <div class="weather-forecast-day">
+    <div class="weather-forecast-date">${formatDay(day.time)}</div>
+    <div class="weather-forecast-temperatures">
+      <div class="weather-forecast-temperature">
+        <strong>${Math.round(day.temperature.maximum)}°</strong>
+      </div>
+      <div class="weather-forecast-temperature">${Math.round(
+        day.temperature.minimum
+      )}°</div>
+    </div>
+  </div>
+`;
+    }
+  });
+
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
 }
 
 document
   .querySelector("#search-form")
   .addEventListener("submit", handleSearchSubmit);
 searchCity("Lisbon");
+getForecast("Lisbon");
