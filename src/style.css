@@ -51,6 +51,7 @@ footer a:visited,
 footer a:hover,
 footer a:active {
   color: #ffffff;
+  text-decoration: none;
 }
 
 .weather-app {
